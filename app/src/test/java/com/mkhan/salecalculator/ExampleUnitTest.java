@@ -12,6 +12,15 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
+        String finalValue = "23.21";
+        String xx =  finalValue.substring(finalValue.indexOf("."));
+
+        if(xx.length() > 3){
+            System.out.println("Orig : " + xx + " New : " + xx.substring(0,3));
+        } else {
+            System.out.println("Orig : " + xx );
+        }
+
         assertEquals(4, 2 + 2);
     }
 }

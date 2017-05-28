@@ -19,6 +19,7 @@
         <!-- Customize your theme here. -->
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@color/colorButtonAlternate</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">@color/colorTableBackground</item>
     </style>
 </resources>
