@@ -6,7 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/background</item>
+
     </style>
+
+    <!--<style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/colorAccent</item>
+    </style>-->
 
     <style name="ButtonTheme" parent="Base.Widget.AppCompat.Button">
     <!-- Customize your theme here. -->

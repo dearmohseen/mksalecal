@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText initialPrice;
     EditText otherPercentage;
+    TextView txtInitialPrice;
+    TextView txtFinalLabel;
     TextView txtFinalPrice;
 
     @Override
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         initializeAdUnit();
 
         initializeButtons();
+
+        setTextSizes();
     }
 
     public boolean validate(String btnText){
@@ -123,7 +127,9 @@ public class MainActivity extends AppCompatActivity {
         initialPrice = (EditText)findViewById(R.id.editTextInitial);
         otherPercentage = (EditText)findViewById(R.id.edittextOther);
 
+        txtInitialPrice = (TextView) findViewById(R.id.txtInitialPrice);
         txtFinalPrice = (TextView) findViewById(R.id.txtFinalPrice);
+        txtFinalLabel = (TextView) findViewById(R.id.txtFinalLabel);
 
         btn10 = (Button) findViewById(R.id.btn10);
         btn10.setOnClickListener(new MyButtonListener());
@@ -148,7 +154,95 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public class MyButtonListener implements View.OnClickListener {
+    private void setTextSizes(){
+
+        System.out.println("Mohseen : setTextSizes " + width + " : " +height + " Orientation : " + config.orientation);
+        final float scale = this.getResources().getDisplayMetrics().density;
+        if(config.orientation == 1) {
+
+            if (width > 500 && height > 600) {
+                updateTextSize(scale,34);
+                updateButtonSize(scale,180,100);
+            } else if(width > 310 && height > 500){
+                updateTextSize(scale,24);
+                updateButtonSize(scale,100,60);
+            }
+        } else {
+            if (width > 700 && height > 450) {
+                updateTextSize(scale,34);
+                updateButtonSize(scale,180,90);
+            } else if (width > 500 && height >= 275 && height < 310) {
+                updateTextSize(scale,24);
+                updateButtonSize(scale,100,45);
+            } else if (width > 500 && height >= 310 && height < 450) {
+                updateTextSize(scale,24);
+                updateButtonSize(scale,100,55);
+            }
+        }
+
+    }
+
+    public void updateTextSize(float scale,int size){
+        //int size  = txtSize;//(int) (txtSize * scale + 0.5f);;
+        txtInitialPrice.setTextSize(size-4);
+        txtFinalLabel.setTextSize(size-4);
+
+        txtFinalPrice.setTextSize(size);
+
+        initialPrice.setTextSize(size-4);
+        otherPercentage.setTextSize(size-4);
+        btn10.setTextSize(size);
+        btn20.setTextSize(size);
+        btn30.setTextSize(size);
+        btn40.setTextSize(size);
+        btn50.setTextSize(size);
+        btn60.setTextSize(size);
+        btn70.setTextSize(size);
+        btn80.setTextSize(size);
+        btn90.setTextSize(size);
+        btnCalculatePercentage.setTextSize(size);
+    }
+
+    public void updateButtonSize(float scale,int width, int height){
+
+        int btnSize = (int) (width * scale + 0.5f);
+        int btnHeight = (int) (height * scale + 0.5f);
+        btn10.getLayoutParams().width = btnSize;
+        btn10.getLayoutParams().height = btnHeight;
+        btn20.getLayoutParams().width = btnSize;
+        btn20.getLayoutParams().height = btnHeight;
+        btn30.getLayoutParams().width = btnSize;
+        btn30.getLayoutParams().height = btnHeight;
+        btn40.getLayoutParams().width = btnSize;
+        btn40.getLayoutParams().height = btnHeight;
+        btn50.getLayoutParams().width = btnSize;
+        btn50.getLayoutParams().height = btnHeight;
+        btn60.getLayoutParams().width = btnSize;
+        btn60.getLayoutParams().height = btnHeight;
+        btn70.getLayoutParams().width = btnSize;
+        btn70.getLayoutParams().height = btnHeight;
+        btn80.getLayoutParams().width = btnSize;
+        btn80.getLayoutParams().height = btnHeight;
+        btn90.getLayoutParams().width = btnSize;
+        btn90.getLayoutParams().height = btnHeight;
+
+        if(config.orientation == 2){
+            btnCalculatePercentage.getLayoutParams().height = btnHeight - 10;
+        } else {
+            btnCalculatePercentage.getLayoutParams().height = btnHeight - 50;
+        }
+
+        //initialPrice.getLayoutParams().width = btnSize;
+
+        initialPrice.getLayoutParams().height = btnCalculatePercentage.getLayoutParams().height;
+        otherPercentage.getLayoutParams().width = btnSize;
+        otherPercentage.getLayoutParams().height = btnCalculatePercentage.getLayoutParams().height;
+        btnCalculatePercentage.getLayoutParams().width = (int) ((width + 30) * scale + 0.5f);
+        initialPrice.getLayoutParams().width = btnCalculatePercentage.getLayoutParams().width ;
+        //btnCalculatePercentage.getLayoutParams().height = btnHeight-20;
+    }
+
+    private class MyButtonListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             calculatePercentage(v);
@@ -157,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeAdUnit() {
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id));
         mAdView1 = (AdView) findViewById(R.id.adView);
-        //mAdView1.setVisibility(View.INVISIBLE);
+        mAdView1.setVisibility(View.INVISIBLE);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adRequest.isTestDevice(this);
@@ -175,5 +269,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         mAdView1.pause();
         super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mAdView1.destroy();
+        super.onDestroy();
     }
 }

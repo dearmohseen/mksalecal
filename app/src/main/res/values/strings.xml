@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">Sale Calculator</string>
-    <string name="banner_ad_unit_id">ca-app-pub-1322448895447717/9531904783</string>
+    <string name="app_name">Sale Price Calculator</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1322448895447717~7487397581</string>
+    <string name="original_price">Original Price</string>
+    <string name="orig_price_hint">Orig. Price</string>
+    <string name="final_price_label">Final Price:</string>
+    <string name="final_price_blank">-/-</string>
+    <string name="percent_10_text">10%</string>
+    <string name="percent_20_text">20%</string>
+    <string name="percent_30_text">30%</string>
+    <string name="percent_40_text">40%</string>
+    <string name="percent_50_text">50%</string>
+    <string name="percent_60_text">60%</string>
+    <string name="percent_70_text">70%</string>
+    <string name="percent_80_text">80%</string>
+    <string name="percent_90_text">90%</string>
+    <integer name="original_price_max_length">7</integer>
+    <integer name="other_discount_max_length">5</integer>
 </resources>
