@@ -4,16 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#d9272f</color>
     <color name="colorButtonPrimary">#60dd62</color>
-    <color name="colorButtonAlternate">#dae767</color>
     <color name="colorTableBackground">#2a88f3</color>
     <color name="background">#FFC107</color>
 
-    <color name="primary">#CDDC39</color>
-    <color name="primary_dark">#AFB42B</color>
-    <color name="primary_light">#F0F4C3</color>
-    <color name="accent">#FFC107</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
-    <color name="icons">#212121</color>
-    <color name="divider">#BDBDBD</color>
 </resources>
