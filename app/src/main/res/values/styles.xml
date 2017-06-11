@@ -1,12 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/background</item>
+        <!--<item name="android:windowBackground">@color/background</item>-->
 
     </style>
 
@@ -16,14 +16,19 @@
 
     <style name="ButtonTheme" parent="Base.Widget.AppCompat.Button">
     <!-- Customize your theme here. -->
-    <item name="android:textSize">18sp</item>
+    <item name="android:textSize">@dimen/label_size</item>
     <item name="android:textStyle">bold</item>
+    <item name="android:minHeight">@dimen/btn_min_height</item>
+    <item name="android:minWidth">@dimen/btn_min_width</item>
+
     <item name="android:background">@color/colorButtonPrimary</item>
 </style>
 
     <style name="ButtonThemeAlternate" parent="Base.Widget.AppCompat.Button">
         <!-- Customize your theme here. -->
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/label_size</item>
+        <item name="android:minWidth">@dimen/btn_min_width</item>
+        <item name="android:minHeight">@dimen/btn_min_height</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#fff</item>
         <item name="android:background">@color/colorTableBackground</item>

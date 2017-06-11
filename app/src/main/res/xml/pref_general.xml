@@ -1,0 +1,13 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="#FFC107"
+        android:entries="@array/pref_backgrnd_color_titles"
+        android:entryValues="@array/pref_backgrnd_color_values"
+        android:key="@string/pref_background_color"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_background_title"
+        />
+
+</PreferenceScreen>

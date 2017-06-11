@@ -46,4 +46,11 @@ public class Utility {
         return orig;
     }
 
+    public static Intent createShareForecastIntent(String packageName) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, Utility.APP_STORE_URL + packageName);
+        return shareIntent;
+    }
 }

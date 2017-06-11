@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Sale Price Calculator</string>
-    <string name="banner_ad_unit_id">ca-app-pub-1322448895447717~7487397581</string>
-    <string name="original_price">Original Price</string>
+    <string name="app_name">Discount Calculator</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1322448895447717/8964130785</string>
+    <string name="original_price">Orig. Cost</string>
     <string name="orig_price_hint">Orig. Price</string>
     <string name="final_price_label">Final Price:</string>
-    <string name="final_price_blank">-/-</string>
+    <string name="final_price_blank">0.0</string>
     <string name="percent_10_text">10%</string>
     <string name="percent_20_text">20%</string>
     <string name="percent_30_text">30%</string>
@@ -14,6 +14,39 @@
     <string name="percent_70_text">70%</string>
     <string name="percent_80_text">80%</string>
     <string name="percent_90_text">90%</string>
+    <string name="rate_app_title">Rate Sale Calculator!</string>
+    <string name="share_title">Share</string>
     <integer name="original_price_max_length">7</integer>
     <integer name="other_discount_max_length">5</integer>
+
+    <!-- Settings Constants-->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_background_title">Background Color</string>
+    <string name="pref_background_color">pref_background_color</string>
+    <string name="savings_label">Savings :</string>
+    <string name="other_perct_hint">Other %</string>
+    <string name="calculate_label">Calculate</string>
+    <string-array name="pref_backgrnd_color_titles">
+
+        <item>Yellow</item>
+        <item>Amber</item>
+        <item>Lime</item>
+        <item>Cyan</item>
+        <item>Blue Grey</item>
+        <item>Brown</item>
+        <item>Indigo</item>
+        <item>Purple</item>
+    </string-array>
+    <string-array name="pref_backgrnd_color_values">
+        <item>#ffff8d</item>
+        <item>#FFC107</item>
+        <item>#CDDC39</item>
+        <item>#4dd0e1</item>
+        <item>#607D8B</item>
+        <item>#a1887f</item>
+        <item>#8c9eff</item>
+        <item>#e600e6</item>
+    </string-array>
+
+
 </resources>

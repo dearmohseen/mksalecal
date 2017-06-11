@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="label_size">28sp</dimen>
+    <dimen name="btn_min_height">80dp</dimen>
+    <dimen name="btn_min_width">200dp</dimen>
+    <dimen name="edittext_width">200dp</dimen>
+</resources>
