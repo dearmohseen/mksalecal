@@ -3,7 +3,7 @@
     <string name="banner_ad_unit_id">ca-app-pub-1322448895447717/8964130785</string>
     <string name="original_price">Orig. Cost</string>
     <string name="orig_price_hint">Orig. Price</string>
-    <string name="final_price_label">Final Price:</string>
+    <string name="final_price_label">Final Price :</string>
     <string name="final_price_blank">0.0</string>
     <string name="percent_10_text">10%</string>
     <string name="percent_20_text">20%</string>

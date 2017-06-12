@@ -10,6 +10,24 @@
 
     </style>
 
+    <style name="MyTextViewLabelStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/label_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+        <item name="android:layout_column">0</item>
+    </style>
+
+    <style name="MyTextViewValueStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/label_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_span">2</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:layout_column">1</item>
+        <item name="android:gravity">start</item>
+    </style>
+
     <!--<style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/colorAccent</item>
     </style>-->

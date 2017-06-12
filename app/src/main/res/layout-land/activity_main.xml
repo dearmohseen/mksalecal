@@ -8,7 +8,9 @@
     android:id="@+id/mainConstraintLayout"
     tools:context="com.mkhan.salecalculator.MainActivity">
 
-    <include layout="@layout/ad_layout" />
+    <include layout="@layout/ad_layout"
+        app:layout_constraintRight_toRightOf="@+id/tableLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/tableLayout" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -33,28 +35,17 @@
                 android:id="@+id/txtSavingLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
                 android:text="@string/savings_label"
-                android:textAlignment="textEnd"
-                android:gravity="end"
-                android:textAllCaps="false"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/label_size"
-                android:textStyle="bold" />
+                style="@style/MyTextViewLabelStyle"/>
 
             <TextView
                 android:id="@+id/txtSavingPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_span="2"
-                android:paddingLeft="5dp"
                 android:text="@string/final_price_blank"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/label_size"
-                android:textStyle="bold" />
+                style="@style/MyTextViewValueStyle"/>
         </TableRow>
 
         <TableRow
@@ -68,24 +59,15 @@
                 android:id="@+id/txtFinalLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:text="Final Cost : "
-                android:textAlignment="textEnd"
-                android:gravity="end"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/label_size"
-                android:textStyle="bold" />
+                android:text="@string/final_price_label"
+                style="@style/MyTextViewLabelStyle" />
 
             <TextView
                 android:id="@+id/txtFinalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:paddingLeft="5dp"
-                android:text="@string/final_price_blank"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/label_size"
-                android:textStyle="bold" />
+                style="@style/MyTextViewValueStyle"
+                android:text="@string/final_price_blank"/>
         </TableRow>
 
         <TableRow
