@@ -4,4 +4,6 @@
     <dimen name="btn_min_height">80dp</dimen>
     <dimen name="btn_min_width">200dp</dimen>
     <dimen name="edittext_width">200dp</dimen>
+    <dimen name="padding_final_row">10dp</dimen>
+    <dimen name="padding_savings_row">10dp</dimen>
 </resources>

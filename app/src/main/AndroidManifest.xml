@@ -27,15 +27,15 @@
                 <data android:scheme="https"
                     android:host="salescalculator" />
                 <data android:scheme="http"
-                    android:host="discountcalculator"
-                    />
+                    android:host="discountcalculator"/>
+                <data android:scheme="android-app" android:host="com.mkhan.salecalculator"/>
 
             </intent-filter>
         </activity>
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mkhan.salecalculator.MainActivity" />
