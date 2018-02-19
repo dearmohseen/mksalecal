@@ -33,15 +33,18 @@
     </style>-->
 
     <style name="ButtonTheme" parent="Base.Widget.AppCompat.Button">
-    <!-- Customize your theme here. -->
-    <item name="android:textSize">@dimen/label_size</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:minHeight">@dimen/btn_min_height</item>
-    <item name="android:minWidth">@dimen/btn_min_width</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">@dimen/label_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/btn_min_height</item>
+        <item name="android:minWidth">@dimen/btn_min_width</item>
+        <item name="android:background">@color/colorButtonPrimary</item>
+    </style>
 
-    <item name="android:background">@color/colorButtonPrimary</item>
-</style>
-
+    <style name="ButtonThemeDark" parent="ButtonTheme">
+        <item name="android:background">@color/primary_dark</item>
+        <item name="android:colorForeground">@color/grey600</item>
+    </style>
     <style name="ButtonThemeAlternate" parent="Base.Widget.AppCompat.Button">
         <!-- Customize your theme here. -->
         <item name="android:textSize">@dimen/label_size</item>

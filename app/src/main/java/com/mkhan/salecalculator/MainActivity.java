@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.ShareActionProvider;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +25,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements
         ShareActionProvider.OnShareTargetSelectedListener{
@@ -138,27 +137,35 @@ public class MainActivity extends AppCompatActivity implements
         return isValid;
     }
 
-    public void calculateOtherPercentage(Double initialPriceDbl,Double otherPrcntDbl ){
-        Double finalValue = initialPriceDbl - (initialPriceDbl/100)*otherPrcntDbl;
-        Double savings = initialPriceDbl - finalValue;
-        updateUI(String.valueOf(finalValue),String.valueOf(savings));
+    public void calculateOtherPercentage(double initialPriceDbl, double otherPrcntDbl ){
+        BigDecimal initialPriceBD = new BigDecimal(initialPriceDbl);
+        BigDecimal otherPrcntBD = new BigDecimal(otherPrcntDbl);
+        BigDecimal finalValue = initialPriceBD.subtract(initialPriceBD.divide(new BigDecimal(100)).multiply(otherPrcntBD));
+        BigDecimal savings = initialPriceBD.subtract(finalValue);
+
+        //System.out.println(" Mohseen : initialPriceBD " + initialPriceBD + " otherPrcntBD = " + otherPrcntBD
+          //      + " finalValue = " + finalValue + " savings = " + savings);
+
+        updateUI(finalValue.doubleValue(),savings.doubleValue());
     }
 
-    public void updateUI(String finalValue,String savingValue){
-        System.out.println(" Mohseen : update ui Price " + finalValue);
+    public void updateUI(Double finalValue,Double savingValue){
+        //System.out.println(" Mohseen : update ui Price " + finalValue);
 
-        if(finalValue.indexOf(".") > 0){
+        /*if(finalValue.indexOf(".") > 0){
             txtFinalPrice.setText(Utility.formatStringUpto2DigitDecimal(finalValue));
         } else {
             txtFinalPrice.setText(finalValue);
-        }
+        }*/
+        txtFinalPrice.setText(String.format("%.2f", finalValue));
 
+/*
         if(savingValue.indexOf(".") > 0){
             txtSavingPrice.setText(Utility.formatStringUpto2DigitDecimal(savingValue));
         } else {
             txtSavingPrice.setText(finalValue);
-        }
-
+        }*/
+        txtSavingPrice.setText(String.format("%.2f", savingValue));
     }
 
     public void calculatePercentage(View v){
@@ -332,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements
     private void initializeAdUnit() {
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id));
         mAdView1 = (AdView) findViewById(R.id.adView);
-//        mAdView1.setVisibility(View.INVISIBLE);
+        //mAdView1.setVisibility(View.GONE);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adRequest.isTestDevice(this);

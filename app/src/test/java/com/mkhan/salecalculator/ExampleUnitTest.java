@@ -2,7 +2,9 @@ package com.mkhan.salecalculator;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,14 +14,15 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        String finalValue = "23.21";
-        String xx =  finalValue.substring(finalValue.indexOf("."));
+        Double initialPriceDbl = 39.0;
+        Double otherPrcntDbl = 33.0;
+        Double finalValue = initialPriceDbl - (initialPriceDbl/100)*otherPrcntDbl;
 
-        if(xx.length() > 3){
-            System.out.println("Orig : " + xx + " New : " + xx.substring(0,3));
-        } else {
-            System.out.println("Orig : " + xx );
-        }
+        BigDecimal bd1 = new BigDecimal(initialPriceDbl);
+        BigDecimal bd2 = new BigDecimal(otherPrcntDbl);
+
+        Double savings = initialPriceDbl - finalValue;
+        System.out.println(" finalValue = " + finalValue + " savings = " + savings + " --- " + bd1.subtract(bd1.divide(new BigDecimal(100)).multiply(bd2))) ;
 
         assertEquals(4, 2 + 2);
     }

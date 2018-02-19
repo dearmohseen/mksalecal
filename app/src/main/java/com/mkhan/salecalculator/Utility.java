@@ -39,7 +39,8 @@ public class Utility {
 
         String newValue =  orig.substring(orig.indexOf("."));
         if(newValue.length() > 3){
-            System.out.println("newValue : " + newValue + " New : " + newValue.substring(0,3));
+            System.out.println("Mohseen newValue : " + newValue + " New : " + newValue.substring(0,3));
+            //return String.format("%.2f", orig);
             return orig.substring(0,orig.indexOf(".")).concat(newValue.substring(0,3));
         }
 
@@ -53,4 +54,5 @@ public class Utility {
         shareIntent.putExtra(Intent.EXTRA_TEXT, Utility.APP_STORE_URL + packageName);
         return shareIntent;
     }
+
 }
